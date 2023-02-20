@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -16,6 +17,8 @@ class Photographs(models.Model):
     description = models.TextField(null=False, blank=False)
     category = models.CharField(max_length=20, choices=category_choices, default="")
     photo = models.CharField(max_length=100, null=False, blank=False)
+    published = models.BooleanField(default=False)
+    date_photo = models.DateField(default=datetime.now(), blank=False)
 
     def __str__(self):
         return self.name
