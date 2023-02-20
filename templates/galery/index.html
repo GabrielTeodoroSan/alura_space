@@ -22,7 +22,7 @@
                             {% for photo in photos %}
                             <li class="card">
                                 <a href="{% url 'image' photo.id %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/' %}{{ photo.photo }}" alt="foto">
+                                    <img class="card__imagem" src="{{ photo.photo.url }}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
                                 <div class="card__info">
