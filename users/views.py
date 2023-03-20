@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .forms import LoginForms, CadastroForms
 
 # Create your views here.
 
 def login(request):
-    return render(request, 'users/login.html')
+    form = LoginForms()
+    return render(request, 'users/login.html', {"form": form})
 
 
 def register(request):
-    return render(request, 'users/register.html')
+    form = CadastroForms()
+    return render(request, 'users/register.html', {"form": form})
 
 
 def logout(request):
