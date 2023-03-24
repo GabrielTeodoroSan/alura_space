@@ -20,7 +20,6 @@ def image(request, id):
 def search(request):
     if not request.user.is_authenticated:
         messages.error(request, "Usuario não logado...")
-        print("hello................")
         return redirect('login')
     
     photos = Photographs.objects.order_by("-date_photo").filter(published=True)
